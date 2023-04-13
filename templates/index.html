@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Telephone Company Churn Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px #ccc;
+        width: 500px;
+        margin: 0 auto;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+        color: #666;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      select {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-bottom: 16px;
+      }
+
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #45a049;
+      }
+      #predection{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px #ccc;
+        width: 500px;
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Telephone Company Churn Prediction</h1>
+    <form action="http://127.0.0.1:5000/predict_api" method="post">
+
+      <label for="CreditScore">CreditScore:</label>
+      <input type="text" id="CreditScore" name="CreditScore" required>
+
+      <label for="Age">Age:</label>
+      <input type="text" id="Age" name="Age" required>
+
+      <label for="Tenure">Tenure:</label>
+      <input type="text" id="Tenure" name="Tenure" required>
+
+      <label for="Balance">Balance:</label>
+      <input type="text" id="Balance" name="Balance" required>
+
+      <label for="NumOfProducts">Number Of Products:</label>
+      <input type="text" id="NumOfProducts" name="NumOfProducts" required>
+
+      <label for="HasCrCard">Has Credit Card:</label>
+      <select id="HasCrCard" name="HasCrCard" required>
+        <option value=""></option>
+        <option value=1>Yes</option>
+        <option value=0>No</option>
+      </select>
+
+      <label for="IsActiveMember">IsActiveMember:</label>
+      <select id="IsActiveMember" name="IsActiveMember" required>
+        <option value=""></option>
+        <option value=1>Yes</option>
+        <option value=0>No</option>
+      </select>
+
+      <label for="EstimatedSalary">Estimated Salary:</label>
+      <input type="text" id="EstimatedSalary" name="EstimatedSalary" required>
+
+      <label for="Geography_Germany">Geography_Germany:</label>
+      <input type="text" id="Geography_Germany" name="Geography_Germany" required>
+
+      <label for="Geography_Spain">Geography_Spain:</label>
+      <input type="text" id="Geography_Spain" name="Geography_Spain" required>
+
+      <label for="Gender_Male">Gender_Male:</label>
+      <input type="text" id="Gender_Male" name="Gender_Male" required>
+
+      <input type="submit" value="Predict Churn">
+    </form>
+<div id="predection">
+  {{predection_test}}
+</div>
+    
+  </body>
+  </html>
